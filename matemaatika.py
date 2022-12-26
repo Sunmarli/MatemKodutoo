@@ -3,7 +3,6 @@ from random import *
 #В программе случайным образом "задаются" примеры, с учетом сложности провряемых знаний.
 #После введенного пользователем ответа, проверяется его правильностью.
 
-
 answers = 5
 print("Проверка знаний\n")
 Tase=int(input("Choose tase, 1,2 or 3?"))
@@ -11,8 +10,12 @@ if Tase==1:
         for i in range (5):
             first=randint(0,10)
             second=randint(0,10)
-            res=first+second
-            print(f"{first} + {second} =", end=" ")
+            tehed=["+","-"]
+            tehe_arv=1
+            tehe=randint(0,tehe_arv)
+            mark=tehed[tehe]
+            res=eval(str(first)+mark+str(second))
+            print(f"{first}{mark}{second} =", end=" ")
             answer = int(input(""))
             if answer !=res:
                 print("Ошибка!")
@@ -22,7 +25,11 @@ elif Tase==2:
             first=randint(0,100)
             second=randint(0,100)
             res=first-second
-            print(f"{first} - {second} =", end=" ")
+            tehed=["+","-","*"]
+            tehe_arv=2
+            tehe=randint(0,tehe_arv)
+            mark=tehed[tehe] 
+            print(f"{first}{mark}{second} =", end=" ")
             answer = int(input(""))
             if answer !=res:
                 print("Ошибка!")
@@ -32,7 +39,11 @@ elif Tase==3:
             first=randint(0,100)
             second=randint(0,100)
             res=first*second
-            print(f"{first} * {second} =", end=" ")
+            tehed=["+","-","*","/"]
+            tehe_arv=3
+            tehe=randint(0,tehe_arv)
+            mark=tehed[tehe] 
+            print(f"{first} {mark} {second} =", end=" ")
             answer = int(input(""))
             if answer !=res:
                 print("Ошибка!")
